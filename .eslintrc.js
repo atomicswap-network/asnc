@@ -11,7 +11,26 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:nuxt/recommended',
   ],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'eslint-plugin-tsdoc', 'simple-import-sort'],
   // add your custom rules here
-  rules: {},
+  rules: {
+  	'vue/max-attributes-per-line': 'off',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+        },
+      },
+    ],
+  	'prettier/prettier': [
+      'error',
+      {
+        semi: false,
+        singleQuote: true,
+      },
+    ],
+    'tsdoc/syntax': 'error',
+    'simple-import-sort/sort': 'error',
+  },
 }
